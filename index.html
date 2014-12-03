@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="icsTrans">
+<head>
+    <title>ICS Translator</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body ng-controller="mainCtrl">
+    <nav class="navbar navbar-default" role="navigation" ng-include="'app/shared/nav/navView.html'"></nav>
+    <article class="container">
+        <div class="row">
+            <h2 class="col-lg-12">{{title}} Phrase:</h2>
+        </div>
+        <section class="row">
+            <div class="col-lg-12">
+                <form class="form-horizontal col-lg-12">
+                    <fieldset>
+                        <div class="form-group">
+                            <!-- <input id="textinput" name="textinput" placeholder="sos" class="form-control input-md" type="text" ng-model="phrase"/> -->
+                            <textarea id="textinput" name="textinput" placeholder="sos" class="form-control input-md" type="text" ng-model="phrase"></textarea>
+                            <br/>
+                            <label for="phonetic">Show Phonetics</label>
+                            <input type="checkbox" id="phonetic" name="phonetic" checked="checked" ng-model="phonetic" ng-change="showPhonetic(phonetic)"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+        <section class="row {{ page }}" ng-view></section>
+    </article>
+    <footer class="container">
+        <div class="row">
+            <div class="col-lg-4 col-xs-12">
+                Copyright &copy; {{ year }} <a href="https://strayobject.co.uk">Stryobject</a>. All rights reserved.
+            </div>
+            <div class="col-lg-4 col-xs-12">
+                Images courtesy of "Denelson83" and contributors via Wikimedia (CC ASA 3.0)
+            </div>
+            <div class="col-lg-4 col-xs-12">
+                Development sponsored by <a href="https://plainmotif.co.uk">Plainmotif Limited</a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/vendor/jquery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/app/app.controller.js"></script>
+    <script type="text/javascript" src="/app/app.route.js"></script>
+    <script type="text/javascript" src="/app/app.filter.js"></script>
+</body>
+</html>
