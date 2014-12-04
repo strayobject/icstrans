@@ -36,7 +36,15 @@ icsTransControllers.controller('mainCtrl', [
         };
       });
 
-      $('article').css({'min-height': (window.innerHeight - 235) + 'px'});
+    $('article').css({'min-height': (window.innerHeight - 270) + 'px'});
+
+    $http.get('changelog')
+      .success(function (data) {
+        $scope.version = data.substring(0,5);
+      })
+      .error(function () {
+
+      });
   }
 ]);
 
