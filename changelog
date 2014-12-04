@@ -1,0 +1,7 @@
+0.6.0 - 2014-12-04
+ - fixed 'not in set' character handling
+ - added version
+
+0.5.0 - 2014-12-03
+ - initial release
+ - able to translate given sets in morse, semaphore and flag

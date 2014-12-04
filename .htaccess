@@ -1,0 +1,2 @@
+# Prevent file browsing
+Options -Indexes
