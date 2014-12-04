@@ -26,7 +26,7 @@ icsTransFilter.filter('morse', function () {
       if (trans !== undefined) {
         out += wrapInHtml(char, trans, options);
       } else {
-        out += wrapInHtml(char, '#err#', options);
+        out += wrapInHtml(char, char, options);
       }
     }
 
@@ -71,7 +71,7 @@ icsTransFilter.filter('semaphore', function () {
 
         out += wrapInHtml(char, '<img src="/assets/images/' + trans + '" alt="' + char + '"/>', options);
       } else {
-        out += wrapInHtml(char, '#err#', 'semaphore');
+        out += wrapInHtml(char, char, 'semaphore');
       }
 
       prevChar = char;
@@ -108,7 +108,7 @@ icsTransFilter.filter('flag', function () {
       if (trans !== undefined) {
         out += wrapInHtml(char, '<img src="/assets/images/' + trans + '" alt="' + char + '"/>', options);
       } else {
-        out += wrapInHtml(char, '#err#', options);
+        out += wrapInHtml(char, char, options);
       }
     }
 
@@ -121,11 +121,15 @@ icsTransFilter.filter('flag', function () {
 function wrapInHtml(key, val, options)
 {
   if (options.phonetic) {
-    val += '<span>' + options.phoneticCode[key] + '</span>';
+    if (options.phoneticCode[key] !== undefined) {
+      val += '<span>' + options.phoneticCode[key] + '</span>';
+    } else {
+      val += '<span>' + key + '</span>';
+    }
   }
 
   if (options.type === 'morse') {
-    return '<div class="sign col-lg-1 col-md-1 col-sm-1 col-xs-2">' + val + '</div>';
+    return '<div class="sign col-lg-1 col-md-2 col-sm-2 col-xs-2">' + val + '</div>';
   } else {
     return '<div class="sign col-lg-2 col-md-2 col-sm-2 col-xs-4">' + val + '</div>';
   }
