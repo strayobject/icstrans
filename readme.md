@@ -5,7 +5,9 @@ letters of English alphabet into a flag, morse or semaphore code.
 
 Have a look at [our website][1]
 
-**Note: this project has been done 'for fun'.  
+**Note: this project has been done 'for fun'. It is not finished, has bugs,
+requires more time.  
+<br/>
 DO NOT RELY ON THE TRANSLATION IN LIFE OR DEATH SITUATIONS!**
 
 [1]: http://ics.strayobject.co.uk
