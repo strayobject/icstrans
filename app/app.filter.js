@@ -60,9 +60,6 @@ icsTransFilter.filter('semaphore', function () {
       trans = options.code[char];
 
       if (trans !== undefined) {
-        console.log(!isNaN(parseInt(char)));
-        console.log(isNaN(parseInt(prevChar)));
-        console.log('--------');
         // numeral sign
         if (!isNaN(parseInt(char)) && isNaN(parseInt(prevChar))) {
           out += wrapInHtml('#', '<img src="/assets/images/' + options.code['numeric'] +'" alt="' + char + '"/>', options);
