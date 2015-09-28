@@ -1,3 +1,10 @@
+0.6.2 - 2015-09-28
+ - removed console logs
+ - updated changelog
+
+0.6.1 - 2015-09-27
+ - literal switch should not appear after 2nd digit
+
 0.6.0 - 2014-12-04
  - fixed 'not in set' character handling
  - added version
